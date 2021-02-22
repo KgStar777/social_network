@@ -1,0 +1,31 @@
+.wrapper {
+    padding: 20px;
+}
+
+.friendsWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    /*background-color: whitesmoke;*/
+    /*box-shadow: navajowhite 0px 0px 5px;*/
+}
+
+.friendsImg {
+    width: 95px;
+    height: 95px;
+    border: crimson 2px solid;
+    border-radius: 50%;
+    box-shadow: darkgrey 1px 1px 0px;
+}
+
+.friendsName {
+    display: block;
+}

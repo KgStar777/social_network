@@ -1,0 +1,13 @@
+.header {
+    grid-area: h;
+    /*background: url("../images/bckg.png") center center/cover no-repeat;*/
+    /*border: 2px solid lightgray;*/
+    /*border-radius: 15px;*/
+    background-color: white;
+    margin: 10px;
+    border-radius: 4px;
+    box-shadow: grey 2px 2px 6px;
+}
+.header__image {
+    width: 40px;
+}

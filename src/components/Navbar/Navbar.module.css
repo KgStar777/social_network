@@ -1,0 +1,19 @@
+.nav {
+    grid-area: n;
+    /*background-color: greenyellow;*/
+    background-color: white;
+    margin: 0 0 10px 10px;
+    border-radius: 4px;
+    padding: 20px;
+    max-height: 125px;
+    box-shadow: grey 2px 2px 6px;
+}
+
+.item a {
+    color: darkgray;
+    text-decoration: none;
+}
+
+.item a.active {
+    color: black;
+}
