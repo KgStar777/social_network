@@ -16,6 +16,12 @@
     text-transform: uppercase;
     color: white;
     box-shadow: darkgrey 1px 1px 0px;
+    cursor: pointer;
+}
+
+.postsBlock button:hover {
+    box-shadow: none;
+    cursor: pointer;
 }
 
 .posts {

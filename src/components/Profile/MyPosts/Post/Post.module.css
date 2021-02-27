@@ -7,10 +7,21 @@
   border-radius: 4px;
 }
 
+.postWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .item img {
   width: 50px;
   height: 50px;
   border-radius: 30px;
+  margin-right: 10px;
+}
+
+.name {
+  color: darkslateblue;
 }
 
 .likes {

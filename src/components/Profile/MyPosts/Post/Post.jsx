@@ -7,7 +7,10 @@ const Post = (props) => {
 
     return (
         <div className={classes.item}>
-            <img src='https://dowerapport.com/assets/celebs/nick_fury_2.jpg' />
+            <div className={classes.postWrapper}>
+                <img src='https://dowerapport.com/assets/celebs/nick_fury_2.jpg' />
+                <div className={classes.name}>Nick Fury</div>
+            </div>
             {props.message}
             <div>
                 <span className={classes.likes}>like {props.likesCount}</span>

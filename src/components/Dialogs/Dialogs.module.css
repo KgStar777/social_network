@@ -78,7 +78,6 @@
 
 .textWrap {
     margin-top: 20px;
-    /*margin: 10px;*/
     display: flex;
     justify-content: space-between;
 }
@@ -92,6 +91,7 @@
     text-transform: uppercase;
     color: white;
     box-shadow: darkgrey 1px 1px 0px;
+    cursor: pointer;
 }
 
 .textWrap button:hover {
