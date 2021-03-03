@@ -23,6 +23,7 @@ rerenderEntireTree(store.getState());
 
 // store.subscribe(rerenderEntireTree);
 store.subscribe(() => {
+    debugger;
     let state = store.getState();
     rerenderEntireTree(state);
 });
