@@ -29,16 +29,15 @@ function App(props) {
 
 
                         <Route path='/dialogs'
-                               render={ () => <DialogsContainer
-                                   store = {props.store} />
+                               render={ () => <DialogsContainer />
                                } />
                         <Route path='/profile'
-                               render={ () => <Profile
-                                   store={props.store} />
+                               render={ () => <Profile />
                                } />
                         <Route path='/friends'
                                render={ () =><Friends
-                                   state={props.state.dialogsPage} /> //friendsPage
+                                   state={props.state.dialogsPage}
+                               /> //friendsPage
                                } />
                         <Route path='/news'
                                render={ () => <News />} />
