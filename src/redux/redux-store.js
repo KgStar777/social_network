@@ -4,9 +4,9 @@ import dialogsReducer from "./dialogsReducer";
 import friendsReducer from "./friendsReducer";
 
 let reducers = combineReducers({
-    profileReducer: profileReducer,
-    dialogsReducer: dialogsReducer,
-    friendsReducer: friendsReducer,
+    profilePage: profileReducer,
+    dialogsPage: dialogsReducer,
+    friendsPage: friendsReducer,
 })
 
 let store = createStore (reducers);
