@@ -1,10 +1,14 @@
 import React from 'react';
 import classes from './Friends.module.css';
+import unnamed from "../../assets/images/unnamed.jpg";
 
 const FriendsName = (props) => {
     return (
             <div className={classes.item}>
-                <div className={classes.friendsImg}></div>
+                <div>
+                    <img src={ props.photo != null ? props.photo : unnamed }
+                         className={classes.friendsImg}/>
+                </div>
                 <div className={classes.friendsName}>
                     { props.namesItem }
                 </div>
@@ -13,7 +17,7 @@ const FriendsName = (props) => {
 }
 
 const Friends = (props) => {
-    let friendsElement = props.state.dialogs.map(i => <FriendsName namesItem={i.name}/>);
+    let friendsElement = props.friends.map(i => <FriendsName namesItem={i.name}/>);
     // console.log(props);
 
     return (

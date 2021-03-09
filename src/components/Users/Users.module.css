@@ -1,0 +1,71 @@
+.selectPageWrapper {
+    margin: 0 auto;
+}
+.selectedPage, .unSelectedPage {
+    cursor: pointer;
+    /*margin: 0 5px;*/
+}
+
+.selectedPage {
+    font-weight: bold;
+}
+
+.unSelectedPage{
+    color: grey;
+}
+
+.usersWrapper {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.userWrapper {
+    margin: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.userWrapperName {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sectionWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.userImg {
+    width: 100px;
+    height: 100px;
+    border: crimson 2px solid;
+    border-radius: 50%;
+    box-shadow: darkgrey 1px 1px 0px;
+}
+
+.getBtn, .followBtn, .unFollowBtn {
+    border: 2px solid crimson;
+    background-color: crimson;
+    width: 100px;
+    height: 30px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    color: white;
+    box-shadow: darkgrey 1px 1px 0px;
+    cursor: pointer;
+    margin: 10px auto;
+}
+
+.unFollowBtn {
+    background-color: darkslateblue;
+    border: 2px solid darkslateblue;
+}
+
+.userName {
+    font-size: 2rem;
+}

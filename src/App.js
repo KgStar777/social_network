@@ -9,8 +9,10 @@ import Profile from "./components/Profile/Profile";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import News from "./components/News/News";
-import Friends from "./components/Friends/Friends";
+// import Friends from "./components/Friends/Friends";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import FriendsContainer from "./components/Friends/FriendsContainer";
+import UsersContainer from "./components/Users/UsersContainer";
 
 function App(props) {
 
@@ -35,10 +37,12 @@ function App(props) {
                                render={ () => <Profile />
                                } />
                         <Route path='/friends'
-                               render={ () =><Friends
-                                   state={props.state.dialogsPage}
-                               /> //friendsPage
+                               render={ () =><FriendsContainer
+                                   // state={props.state.dialogsPage}
+                               />
                                } />
+                        <Route path='/users'
+                               render={ () => <UsersContainer /> } />
                         <Route path='/news'
                                render={ () => <News />} />
                         <Route path='/music'

@@ -48,6 +48,7 @@ const Dialogs = (props) => {
 
             <div className={classes.messagesWrap}>
                 <div className={classes.messages}>
+                    <div className={classes.myMessage}>Hey!</div>
                     {messagesElements}
                     <div className={classes.myMessage}>Ok!</div>
                 </div>
