@@ -3,13 +3,31 @@ import classes from "./Users.module.css";
 import unnamed from "../../assets/images/unnamed.jpg";
 
 let Users = (props) => {
+    console.log(props)
 
     //pagesCount OR countOfPages
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
 
     let pages = [];
     for (let i = 1; i <= pagesCount; i++) {
-        pages.push(i);
+        console.log(pages);
+        // pages.push(i);
+        if (i > props.currentPage) {
+            let pc = props.currentPage
+            if (pc <= 1) {
+                pages.push(pc, pc + 1, pc + 2, '...', pagesCount);
+            }
+            else if(pc < 3) {
+                pages.push(pc - 1, pc, pc + 1, pc + 2, '...',  pagesCount);
+            }
+            else if((pc - 2 || pc - 1 || pc) == pagesCount) {
+                pages.push(1, '...', pc - 2, pc - 1, pc, pagesCount);
+            }
+            else {
+                pages.push(1,  '...', pc - 1, pc, pc + 1, '...', pagesCount);
+            }
+            break;
+        }
     }
 
     return <div className={classes.usersWrapper}>

@@ -3,7 +3,8 @@
 }
 .selectedPage, .unSelectedPage {
     cursor: pointer;
-    /*margin: 0 5px;*/
+    margin: 0 5px;
+    user-select: none;
 }
 
 .selectedPage {
