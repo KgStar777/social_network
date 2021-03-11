@@ -1,6 +1,7 @@
 import React from 'react'
 import classes from "./Users.module.css";
 import unnamed from "../../assets/images/unnamed.jpg";
+import {NavLink} from "react-router-dom";
 
 let Users = (props) => {
     console.log(props)
@@ -21,7 +22,7 @@ let Users = (props) => {
                 pages.push(pc - 1, pc, pc + 1, pc + 2, '...',  pagesCount);
             }
             else if((pc - 2 || pc - 1 || pc) == pagesCount) {
-                pages.push(1, '...', pc - 2, pc - 1, pc, pagesCount);
+                pages.push(1, '...', pagesCount - 2, pagesCount - 1, pagesCount);
             }
             else {
                 pages.push(1,  '...', pc - 1, pc, pc + 1, '...', pagesCount);
@@ -41,21 +42,24 @@ let Users = (props) => {
         </div>
         {
             props.users.map(u => <div key={u.id}>
-                    <div className={classes.userWrapper}>
+                <div className={classes.userWrapper}>
+
+                    <NavLink to={'/profile/' + u.id}>
                         <div className={classes.userPhoto}>
                             <img src={u.photos.small != null ? u.photos.small : unnamed} className={classes.userImg}/>
                         </div>
+                    </NavLink>
 
-                        <div className={classes.userWrapperName}>
-                            <div className={classes.sectionWrapper}>
-                                <div className={classes.userName}>{u.name}</div>
-                                <div>{u.status}</div>
-                            </div>
-                            <div className={classes.sectionWrapper}>
-                                <div>{"u.location.country"}</div>
-                                <div>{"u.location.city"}</div>
-                            </div>
+                    <div className={classes.userWrapperName}>
+                        <div className={classes.sectionWrapper}>
+                            <div className={classes.userName}>{u.name}</div>
+                            <div>{u.status}</div>
                         </div>
+                        <div className={classes.sectionWrapper}>
+                            <div>{"u.location.country"}</div>
+                            <div>{"u.location.city"}</div>
+                        </div>
+                    </div>
 
                         <div className={classes.sectionWrapper}>
                             {u.follower

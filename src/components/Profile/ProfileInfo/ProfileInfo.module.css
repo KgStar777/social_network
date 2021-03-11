@@ -1,3 +1,26 @@
 .descriptionBlock {
-    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /*padding: 10px;*/
+}
+
+.profilePhoto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*margin: 0 auto;*/
+}
+.profilePhoto img {
+    border-radius: 6px ;
+}
+
+.contactsKey {
+    color: grey;
+    font-size: 12px;
+}
+
+.contactsName {
+    color: black;
+    font-size: 14px;
 }
