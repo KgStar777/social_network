@@ -62,6 +62,10 @@
     margin: 10px auto;
 }
 
+.followBtn:disabled, .unFollowBtn:disabled {
+    background-color: dimgrey;
+}
+
 .unFollowBtn {
     background-color: darkslateblue;
     border: 2px solid darkslateblue;

@@ -1,6 +1,6 @@
 import * as axios from "axios";
 
-const baseUrl = "https://social-network.samuraijs.com/api1.0/"
+const baseUrl = "https://social-network.samuraijs.com/api/1.0/"
 
 const instance = axios.create(
     {
@@ -13,7 +13,7 @@ const instance = axios.create(
 );
 
 export const usersAPI = {
-    getUsers(currentPage, pageSize = 10) {
+    getUsers(currentPage = 1, pageSize = 10) {
         return instance.get(`users?page=${currentPage}&count=${pageSize}`)
             .then(response => {
                 return response.data;
