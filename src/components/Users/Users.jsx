@@ -2,15 +2,13 @@ import React from 'react'
 import classes from "./Users.module.css";
 import unnamed from "../../assets/images/unnamed.jpg";
 import {NavLink} from "react-router-dom";
-import * as axios from "axios";
-import {usersAPI} from "../../api/api";
 
 let Users = (props) => {
 // console.log(props.users)
 // debugger
 //pagesCount OR countOfPages
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
-    console.log(pagesCount)
+    // console.log(pagesCount)
 
     let pages = [];
     for (let i = 1; i <= pagesCount; i++) {

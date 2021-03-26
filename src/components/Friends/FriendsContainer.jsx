@@ -3,9 +3,10 @@ import {connect} from "react-redux";
 import Friends from "./Friends";
 
 let mapStateToProps = (state) => {
-    console.log(state.friendsPage.friends)
+    // console.log(state.friendsPage.friends)
     return {
-        friends: state.friendsPage.friends
+        friends: state.friendsPage.friends,
+        isAuth: state.auth.isAuth
     }
 }
 

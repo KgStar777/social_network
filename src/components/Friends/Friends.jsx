@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './Friends.module.css';
 import unnamed from "../../assets/images/unnamed.jpg";
+import {Redirect} from "react-router-dom";
 
 const FriendsName = (props) => {
     return (
@@ -17,8 +18,8 @@ const FriendsName = (props) => {
 }
 
 const Friends = (props) => {
+    if (!props.isAuth) return <Redirect to='./login' />
     let friendsElement = props.friends.map(i => <FriendsName namesItem={i.name}/>);
-    // console.log(props);
 
     return (
         <div className={classes.wrapper}>

@@ -7,6 +7,7 @@ import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import News from "./components/News/News";
 // import Friends from "./components/Friends/Friends";
+import LoginPage from "./components/Login/Login";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import FriendsContainer from "./components/Friends/FriendsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
@@ -30,24 +31,26 @@ function App(props) {
 
 
                         <Route path='/dialogs'
-                               render={ () => <DialogsContainer />
-                               } />
+                               render={() => <DialogsContainer/>
+                               }/>
                         <Route path='/profile/:userId?'
-                               render={ () => <ProfileContainer />
-                               } />
+                               render={() => <ProfileContainer/>
+                               }/>
                         <Route path='/friends'
-                               render={ () =><FriendsContainer
+                               render={() => <FriendsContainer
                                    // state={props.state.dialogsPage}
                                />
-                               } />
+                               }/>
                         <Route path='/users'
-                               render={ () => <UsersContainer /> } />
+                               render={() => <UsersContainer/>}/>
                         <Route path='/news'
-                               render={ () => <News />} />
+                               render={() => <News/>}/>
                         <Route path='/music'
-                               render={ () => <Music />} />
+                               render={() => <Music/>}/>
                         <Route path='/settings'
-                               render={ () => <Settings />} />
+                               render={() => <Settings/>}/>
+                        <Route path='/login'
+                               render={() => <LoginPage/>}/>
 
 
                         {/*<Dialogs/>*/}
