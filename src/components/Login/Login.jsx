@@ -1,12 +1,12 @@
 import React from 'react';
 import classes from "./Login.module.css";
-import trumpLogin from '../../assets/images/login/trumpLogin.jpg'
+import trumpDuckLogin from '../../assets/images/login/trumpDuckLogin.png'
 
 const Login = (props) => {
     return <div className={classes.Login}>
         <h2>Hello, please login</h2>
 
-        <img src={trumpLogin} style={{ width: '110px' }}/>
+        <img src={trumpDuckLogin} style={{ width: '110px', marginBottom: '10px' }}/>
     </div>
 }
 

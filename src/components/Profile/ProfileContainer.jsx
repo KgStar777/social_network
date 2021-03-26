@@ -2,7 +2,9 @@ import React from 'react';
 import Profile from "./Profile";
 import {connect} from "react-redux";
 import {getUserProfile} from "../../redux/profileReducer";
-import {withRouter} from "react-router-dom";
+import {Redirect, withRouter} from "react-router-dom";
+import {withAuthRedirect} from "../../hoc/withAuthRedirect";
+import {compose} from "redux";
 
 class ProfileContainer extends React.Component {
 
@@ -24,11 +26,14 @@ class ProfileContainer extends React.Component {
     }
 }
 
+let AuthRedirectComponent = withAuthRedirect(ProfileContainer);
+
 let mapStateToProps = (state) => ({
     profile: state.profilePage.profile
 });
 
-//функция закинет в контейнерную компоненту данные из URL
-let WithUrlDataContainerComponent = withRouter(ProfileContainer);
-
-export default connect (mapStateToProps, {getUserProfile}) (WithUrlDataContainerComponent);
+export default compose(
+    connect (mapStateToProps, {getUserProfile}),
+    withRouter, //функция закинет в контейнерную компоненту данные из URL
+    withAuthRedirect //функциональный HOC с условием отрисовки ProfileComponent если юзер авторизован
+) (ProfileContainer);

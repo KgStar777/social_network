@@ -18,7 +18,7 @@ const FriendsName = (props) => {
 }
 
 const Friends = (props) => {
-    if (!props.isAuth) return <Redirect to='./login' />
+    // if (!props.isAuth) return <Redirect to='/login' />
     let friendsElement = props.friends.map(i => <FriendsName namesItem={i.name}/>);
 
     return (
