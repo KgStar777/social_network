@@ -10,14 +10,14 @@ let initialState = {
         {id: '2', message: "It's my first project on React", likesCount: 26},
         {id: '3', message: 'Are you know what said me Marvels heroes?', likesCount: 39}
     ],
-    newPostText: 'go',
+    newPostText: 'write something',
     profile: null
 }
 
 const profileReducer = (state = initialState, action) => {
 
     switch (action.type) {
-        case ADD_POST:
+        case ADD_POST: {
             let newPost = {
                 id: 4,
                 message: state.newPostText,
@@ -28,6 +28,7 @@ const profileReducer = (state = initialState, action) => {
                 posts: [...state.posts, newPost],
                 newPostText: ''
             }
+        }
         case UPDATE_NEW_POST_TEXT:
             return {
                 ...state,
@@ -42,7 +43,7 @@ const profileReducer = (state = initialState, action) => {
 
 export const addPostActionCreator = () => ({ type: ADD_POST })
 const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile })
-export const getUserProfile = (userId) => () => (dispatch) => {
+export const getUserProfile = (userId) => (dispatch) => {
     usersAPI.getProfile(userId).then(response => {
         dispatch(setUserProfile(response.data));
     });
