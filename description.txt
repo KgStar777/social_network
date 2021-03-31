@@ -1,0 +1,26 @@
+СТАТУС
+
+Создали классовую К, установили состояние редактирования.
+class ProfileStatus extends React.Component {
+    state = {
+        editMode: false
+    }
+
+описали функции изменения состояния
+
+    activateEditMode = () => {
+        this.setState({
+            editMode: true
+        })
+
+И описали условия изменения состояния
+        {!this.state.editMode &&
+           <div>
+               <span onClick={ this.activateEditMode.bind(this)} >{this.props.status}</span>
+           </div>
+      }
+ {this.state.editMode &&
+               <div>
+                  <input autoFocus={true} onBlur={ this.deactivateEditMode.bind(this) } value={this.props.status}/>
+               </div>
+}

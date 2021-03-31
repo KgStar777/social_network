@@ -1,0 +1,7 @@
+.Status {
+    cursor: pointer;
+}
+
+.Status:hover {
+    background: lightgrey;
+}
