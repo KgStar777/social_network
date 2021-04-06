@@ -4,10 +4,8 @@ import {
     follow, setCurrentPage, unfollow,
     toggleFollowingProgress, getUsers
 } from "../../redux/usersReducer";
-import * as axios from "axios";
 import Users from "./Users";
 import Preloader from "../common/Preloader/Preloader";
-import {usersAPI} from "../../api/api";
 
 
 class UsersAPIComponent extends React.Component {

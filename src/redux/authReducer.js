@@ -6,8 +6,7 @@ const initialState = {
     userId: null,
     email: null,
     login: null,
-    isAuth: false,
-    isFetching: false
+    isAuth: false
 };
 
 const authReducer = (state = initialState, action) => {
@@ -15,8 +14,7 @@ const authReducer = (state = initialState, action) => {
         case SET_USER_DATA:
             return {
                 ...state,
-                ...action.data,
-                isAuth: true
+                ...action.payload
             }
         default:
             return state;
@@ -25,17 +23,35 @@ const authReducer = (state = initialState, action) => {
 
 //создаем actionCreater, задача этой функции вернуть объект "action".
 // Инкапсуляция. упаковываем объект "action" который будет передоваться через dispatch в reducer
-const setAuthUserData = (userId, email, login, isFetching) => ({
-    type: SET_USER_DATA,
-    data: {userId, email, login, isFetching}
-})
+const setAuthUserData = (userId, email, login, isAuth) => ({
+    type: SET_USER_DATA, payload: {userId, email, login, isAuth}})
+
 export const getAuthUserData = () => (dispatch) => {
     authAPI.me()
         .then(response => {
             if (response.data.resultCode === 0) {
                 let {id, email, login} = response.data.data;
-                dispatch(setAuthUserData(id, email, login));
+                dispatch(setAuthUserData(id, email, login, true));
             }
         });
 }
+
+export const login = (email, password, rememberMe) => (dispatch) => {
+    authAPI.login(email, password, rememberMe)
+        .then(response => {
+            if (response.data.resultCode === 0) {
+                dispatch(getAuthUserData())
+            }
+        });
+}
+
+export const logout = () => (dispatch) => {
+    authAPI.logout()
+        .then(response => {
+            if (response.data.resultCode === 0) {
+                dispatch(setAuthUserData(null, null, null, false))
+            }
+        });
+}
+
 export default authReducer;
